@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -37,9 +38,21 @@ public class BookAdapterView extends RecyclerView.Adapter<BookAdapterView.ViewHo
     public void onBindViewHolder(@NonNull  BookAdapterView.ViewHolder holder, int position) {
         holder.txtName.setText(books.get(position).getName());
         holder.txtAuthor.setText(books.get(position).getAuthor());
+        holder.txtDes.setText(books.get(position).getShortDes());
         Glide.with(context).asBitmap()
                 .load(books.get(position).getImageUrl())
                 .into(holder.image);
+
+        if(books.get(position).isExpand()){
+            holder.icdown.setVisibility(View.GONE);
+            holder.icup.setVisibility(View.VISIBLE);
+            holder.showMore.setVisibility(View.VISIBLE);
+
+        }else{
+            holder.icup.setVisibility(View.GONE);
+            holder.icdown.setVisibility(View.VISIBLE);
+            holder.showMore.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -49,15 +62,38 @@ public class BookAdapterView extends RecyclerView.Adapter<BookAdapterView.ViewHo
 
     protected class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView txtName,txtAuthor;
-        private ImageView image;
+        private TextView txtName,txtAuthor,txtDes;
+        private ImageView image,icdown,icup;
         private MaterialCardView parent;
+        private RelativeLayout showMore;
         public ViewHolder( View itemView) {
             super(itemView);
+            showMore=itemView.findViewById(R.id.showMore);
+            txtDes=itemView.findViewById(R.id.txtDesc);
+            icdown=itemView.findViewById(R.id.icdown);
+            icup=itemView.findViewById(R.id.icup);
             txtName=itemView.findViewById(R.id.txtName);
             txtAuthor=itemView.findViewById(R.id.txtAuthor);
             parent=itemView.findViewById(R.id.parent);
             image=itemView.findViewById(R.id.image);
+
+            icdown.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Book book=books.get(getAdapterPosition());
+                    book.setExpand(!book.isExpand());
+                    notifyDataSetChanged();
+                }
+            });
+
+            icup.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Book book =books.get(getAdapterPosition());
+                    book.setExpand(!book.isExpand());
+                    notifyDataSetChanged();
+                }
+            });
         }
     }
 }
