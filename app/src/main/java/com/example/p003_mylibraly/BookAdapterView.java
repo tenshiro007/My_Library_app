@@ -1,6 +1,7 @@
 package com.example.p003_mylibraly;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,8 @@ import com.bumptech.glide.Glide;
 import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;
+
+import static com.example.p003_mylibraly.BookActivity.BOOK_ID_KEY;
 
 public class BookAdapterView extends RecyclerView.Adapter<BookAdapterView.ViewHolder>{
     private Context context;
@@ -43,6 +46,14 @@ public class BookAdapterView extends RecyclerView.Adapter<BookAdapterView.ViewHo
                 .load(books.get(position).getImageUrl())
                 .into(holder.image);
 
+        holder.parent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(context,BookActivity.class);
+                intent.putExtra(BOOK_ID_KEY,books.get(position).getId());
+                context.startActivity(intent);
+            }
+        });
         if(books.get(position).isExpand()){
             holder.icdown.setVisibility(View.GONE);
             holder.icup.setVisibility(View.VISIBLE);

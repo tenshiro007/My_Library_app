@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class AllBookActivity extends AppCompatActivity {
 
-    private ArrayList<Book> books=new ArrayList<>();
+    public static ArrayList<Book> books=new ArrayList<>();
     private RecyclerView bookRecycler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,9 @@ public class AllBookActivity extends AppCompatActivity {
 
         books.add(new Book(2,"Where the Crawdads Sing","Paperback","https://images-na.ssl-images-amazon.com/images/I/513gc-hGy3L._SX331_BO1,204,203,200_.jpg"
                 ,"I can't even express how much I love this book! I didn't want this story to end!--Reese Witherspoon"
-                ,"For years, rumors of the \"Marsh Girl\" have haunted Barkley Cove, a quiet town on the North Carolina coast. So in late 1969, when handsome Chase Andrews is found dead,"));
+                ,"For years, rumors of the \"Marsh Girl\" have haunted Barkley Cove, a quiet town on the North Carolina coast. So in late 1969, when handsome Chase Andrews is found dead,A brave and heartbreaking novel that digs its claws into you and doesn't let go, long after you've finished it' Anna Todd, author of the After series\n" +
+                "'A glorious and touching read, a forever keeper' USA Today\n" +
+                "'Will break your heart while filling you with hope' Sarah Pekkanen, Perfect Neighbors\n"));
 
         books.add(new Book(3,"The Nightingale","Paperback","https://images-na.ssl-images-amazon.com/images/I/51BqKV6TlpL._SX331_BO1,204,203,200_.jpg"
                 ,"New York Times bestseller, Wall Street Journal Best Book of the Year, and soon to be a major motion picture, this unforgettable novel of love and strength in the face of war has enthralled a generation."

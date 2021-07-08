@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.P003_myLibraly">
-        <activity android:name=".AllBookActivity"></activity>
+        <activity android:name=".BookActivity"></activity>
+        <activity android:name=".AllBookActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
