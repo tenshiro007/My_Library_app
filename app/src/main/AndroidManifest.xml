@@ -11,13 +11,26 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.P003_myLibraly">
-        <activity android:name=".FavoriteBookActivity" android:label="Favorite Books"></activity>
-        <activity android:name=".WishBookActivity" android:label="Wishlist Books"/>
-        <activity android:name=".AlreadyReadBookActivity" android:label="Already Read Books" />
-        <activity android:name=".CurrentlyReadActivity" android:label="Currently Read Books"/>
-        <activity android:name=".BookActivity" android:label="Book Details"/>
-        <activity android:name=".AllBookActivity" android:label="Books"/>
-        <activity android:name=".MainActivity" >
+        <activity android:name=".WebActivity"></activity>
+        <activity
+            android:name=".FavoriteBookActivity"
+            android:label="Favorite Books" />
+        <activity
+            android:name=".WishBookActivity"
+            android:label="Wishlist Books" />
+        <activity
+            android:name=".AlreadyReadBookActivity"
+            android:label="Already Read Books" />
+        <activity
+            android:name=".CurrentlyReadActivity"
+            android:label="Currently Read Books" />
+        <activity
+            android:name=".BookActivity"
+            android:label="Book Details" />
+        <activity
+            android:name=".AllBookActivity"
+            android:label="Books" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
