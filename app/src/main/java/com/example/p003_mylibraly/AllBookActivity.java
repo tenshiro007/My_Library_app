@@ -12,6 +12,12 @@ import java.util.ArrayList;
 public class AllBookActivity extends AppCompatActivity {
 
     public static ArrayList<Book> books=new ArrayList<>();
+    public static ArrayList<Book> currentBook=new ArrayList<>();
+    public static ArrayList<Book>alreadyBook=new ArrayList<>();
+    public static ArrayList<Book>wishBook=new ArrayList<>();
+    public static ArrayList<Book>favBook=new ArrayList<>();
+
+
     private RecyclerView bookRecycler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
